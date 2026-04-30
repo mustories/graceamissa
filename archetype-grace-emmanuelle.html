@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archétype d'Incarnation — Grace-Emmanuelle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* PROFIL TERRE DOUBLE CAPRICORNE + AIR VERSEAU — Palette ardoise, vert sauge, or mat, touches argent */
+:root {
+  --primaire: #3D4F4F;
+  --primaire-light: #5C7070;
+  --primaire-pale: #E8EDEC;
+  --accent: #7B9EA0;
+  --accent-verseau: #8FA8C0;
+  --accent-verseau-light: #B8CEDF;
+  --or: #C9A96E;
+  --or-light: #E8D5A3;
+  --or-pale: #F5EDD8;
+  --blanc: #FDFCFA;
+  --creme: #F2F0EB;
+  --nuit: #1A2424;
+  --nuit-deep: #0F1919;
+  --ardoise: #2C3A3A;
+  --ardoise-mid: #354545;
+  --text: #1E2C2C;
+  --text-soft: #4A5E5E;
+  --text-pale: #8A9E9E;
+  --silver: #A8BCC4;
+  --silver-light: #D2E0E6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--blanc);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ─── TYPOGRAPHIE ─── */
+h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* ─── HEADER ─── */
+.header {
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--nuit-deep) 0%, var(--ardoise) 35%, var(--primaire) 65%, #2A3D3D 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 5rem;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(139, 168, 192, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 70%, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--or), transparent);
+}
+
+.header-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 820px;
+}
+
+.header-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.2s forwards;
+}
+
+.header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--blanc);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.4s forwards;
+}
+
+.header-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--silver-light);
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+}
+
+.divider-or {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--or), transparent);
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.7s forwards;
+}
+
+.astre-tags {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.8s forwards;
+}
+
+.astre-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  color: var(--or-light);
+  background: rgba(201, 169, 110, 0.06);
+  border-radius: 0;
+}
+
+.astre-tag span {
+  color: var(--or);
+  font-weight: 500;
+}
+
+.header-prenom {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--blanc);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 1s ease 1s forwards;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.4s forwards;
+}
+
+.scroll-cue span {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-pale);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--or), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-full {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+}
+
+.section-dark {
+  background: var(--nuit);
+  color: var(--blanc);
+}
+
+.section-ardoise {
+  background: var(--ardoise);
+  color: var(--blanc);
+}
+
+.section-creme {
+  background: var(--creme);
+}
+
+.section-pale {
+  background: var(--primaire-pale);
+}
+
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-num {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.section-title-light {
+  color: var(--blanc);
+}
+
+/* ─── PROSE ─── */
+.prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--text-soft);
+}
+
+.prose-light {
+  color: rgba(253, 252, 250, 0.8);
+}
+
+.prose p + p { margin-top: 1.2em; }
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--or), var(--or-light), var(--or), transparent);
+  margin: 0;
+}
+
+/* ─── CARDS 3 NIVEAUX ─── */
+.niveau-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5px;
+}
+
+.niveau-card {
+  padding: 2.5rem;
+  background: var(--blanc);
+  border-left: 3px solid var(--or);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.niveau-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, rgba(201, 169, 110, 0.05), transparent 70%);
+}
+
+.niveau-card:hover { transform: translateX(4px); box-shadow: -4px 0 0 var(--or); }
+
+.niveau-card.soul { border-left-color: var(--or); }
+.niveau-card.incarnation { border-left-color: var(--primaire); }
+.niveau-card.mission { border-left-color: var(--accent-verseau); }
+
+.niveau-card .card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.niveau-card .card-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.soul .card-tag { color: var(--or); }
+.incarnation .card-tag { color: var(--primaire); }
+.mission .card-tag { color: var(--accent-verseau); }
+
+.niveau-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.niveau-card .card-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.card-sub-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-pale);
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ─── TALENTS ─── */
+.talents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.talent-block {
+  padding: 2rem;
+  background: var(--blanc);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.talent-block:hover { transform: translateX(4px); }
+
+.talent-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.talent-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.talent-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+/* ─── CROYANCES ─── */
+.croyances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5px;
+}
+
+.croyance-block {
+  padding: 2.5rem;
+  background: var(--ardoise-mid);
+  transition: transform 0.3s ease;
+}
+
+.croyance-block:hover { transform: translateX(4px); }
+
+.croyance-domaine {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.axiome {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(253, 252, 250, 0.85);
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(201, 169, 110, 0.3);
+}
+
+/* ─── SCHÉMAS ─── */
+.schemas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.schema-card {
+  padding: 2rem 2.5rem;
+  background: var(--blanc);
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: transform 0.3s ease;
+  border-bottom: 1px solid var(--creme);
+}
+
+.schema-card:hover { transform: translateX(4px); }
+
+.schema-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--or-light);
+  line-height: 1;
+}
+
+.schema-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.schema-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  color: var(--text-soft);
+  line-height: 1.78;
+  margin-bottom: 0.8rem;
+}
+
+.trigger-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.trigger-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--accent-verseau);
+}
+
+/* ─── TENSIONS ─── */
+.tensions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tension-card {
+  padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+  background: var(--ardoise);
+  transition: transform 0.3s ease;
+}
+
+.tension-card:hover { transform: translateX(4px); }
+
+.tension-versus {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.6rem;
+}
+
+.tension-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--blanc);
+  margin-bottom: 1rem;
+}
+
+.tension-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: rgba(253, 252, 250, 0.75);
+  line-height: 1.85;
+}
+
+/* ─── TABLEAU ALIGNEMENT ─── */
+.align-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.align-table th {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-pale);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.align-table td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: top;
+}
+
+.align-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primaire);
+  white-space: nowrap;
+}
+
+.align-oui {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  color: var(--text);
+  background: rgba(123, 158, 160, 0.07);
+  border-radius: 2px;
+}
+
+.align-non {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  color: var(--text);
+  background: rgba(201, 169, 110, 0.07);
+  border-radius: 2px;
+}
+
+/* ─── MÉTIER & BUSINESS ─── */
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5px;
+}
+
+.domaine-card {
+  padding: 2.5rem;
+  background: var(--blanc);
+  border-top: 2px solid var(--or);
+  transition: transform 0.3s ease;
+}
+
+.domaine-card:hover { transform: translateX(4px); }
+
+.domaine-card.invest { border-top-color: var(--accent-verseau); }
+
+.domaine-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1rem;
+}
+
+.domaine-card.invest .domaine-tag { color: var(--accent-verseau); }
+
+.domaine-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.domaine-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+/* ─── COMPATIBILITÉS ─── */
+.compat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5px;
+}
+
+.compat-card {
+  padding: 2.5rem;
+  background: var(--blanc);
+  border-left: 3px solid var(--or);
+  transition: transform 0.3s ease;
+}
+
+.compat-card:hover { transform: translateX(4px); }
+
+.compat-context {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1.2rem;
+}
+
+.compat-signs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sign-pill {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.8rem;
+}
+
+.sign-pill.compatible {
+  background: rgba(123, 158, 160, 0.12);
+  color: var(--primaire);
+  border: 1px solid rgba(123, 158, 160, 0.3);
+}
+
+.sign-pill.risque {
+  background: rgba(201, 169, 110, 0.08);
+  color: var(--text-soft);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.compat-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+
+.compat-warning {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-pale);
+  font-style: italic;
+  border-top: 1px solid var(--creme);
+  padding-top: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+/* ─── ARCHÉTYPE ALIGNÉ ─── */
+.archetype-section {
+  background: linear-gradient(160deg, var(--nuit-deep) 0%, var(--ardoise) 50%, #1E3030 100%);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.archetype-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139, 168, 192, 0.08) 0%, transparent 70%);
+}
+
+.archetype-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.archetype-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  color: var(--blanc);
+  letter-spacing: 0.08em;
+  margin-bottom: 2rem;
+  line-height: 1.15;
+}
+
+.archetype-name em {
+  font-style: italic;
+  color: var(--or-light);
+}
+
+.archetype-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(253, 252, 250, 0.75);
+  line-height: 1.85;
+  margin-bottom: 3rem;
+}
+
+.aligned-signs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5px;
+  margin-bottom: 3rem;
+}
+
+.aligned-sign-block {
+  padding: 1.5rem 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  min-width: 200px;
+  text-align: center;
+}
+
+.aligned-sign-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.5rem;
+}
+
+.aligned-sign-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  color: rgba(253,252,250,0.7);
+  font-style: italic;
+}
+
+.markers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.marker-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: rgba(253,252,250,0.8);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.marker-item::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  font-size: 0.45rem;
+  color: var(--or);
+  top: 0.45em;
+}
+
+/* ─── DÉCRETS ─── */
+.decrets-section {
+  background: var(--nuit-deep);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem);
+}
+
+.decrets-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.phase-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.5rem;
+}
+
+.phase-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  color: var(--blanc);
+  margin-bottom: 1rem;
+}
+
+.phase-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(253,252,250,0.5);
+  margin-bottom: 2rem;
+}
+
+.decret-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  color: rgba(253,252,250,0.82);
+  line-height: 1.7;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.decret-item::before {
+  content: attr(data-num);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--or);
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.decret-item.activation {
+  color: var(--or-light);
+}
+
+.phase-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
+  margin: 3rem 0;
+}
+
+.decret-seal {
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  margin-top: 3rem;
+  position: relative;
+}
+
+.decret-seal::before, .decret-seal::after {
+  content: '✦';
+  color: var(--or);
+  font-size: 0.8rem;
+  position: absolute;
+}
+.decret-seal::before { top: 1rem; left: 1.5rem; }
+.decret-seal::after { bottom: 1rem; right: 1.5rem; }
+
+.seal-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--or-light);
+  line-height: 1.8;
+}
+
+/* ─── PHRASE DE VIE ─── */
+.phrase-section {
+  background: var(--ardoise);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+  text-align: center;
+}
+
+.phrase-citation {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--or-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--nuit-deep);
+  padding: 3rem clamp(1.5rem, 6vw, 5rem);
+  text-align: center;
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.4rem;
+}
+
+.footer-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: var(--text-pale);
+  text-transform: uppercase;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .niveau-grid, .croyances-grid, .business-grid, .compat-grid, .talents-grid {
+    grid-template-columns: 1fr;
+  }
+  .schema-card {
+    grid-template-columns: 40px 1fr;
+    gap: 1rem;
+  }
+  .aligned-signs { flex-direction: column; align-items: center; }
+  .align-table { font-size: 0.9rem; }
+  .align-table th, .align-table td { padding: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ HEADER ══════════════════════════════════════════ -->
+<header class="header">
+  <div class="header-inner">
+    <p class="header-label">Lecture Archétypale Incarnatoire</p>
+    <h1 class="header-title">Archétype d'Incarnation</h1>
+    <p class="header-subtitle">Le scan de ton âme en trois fréquences</p>
+    <div class="divider-or"></div>
+    <div class="astre-tags">
+      <div class="astre-tag">☉ Soleil <span>Capricorne</span></div>
+      <div class="astre-tag">↑ Ascendant <span>Capricorne</span></div>
+      <div class="astre-tag">☽ Lune <span>Verseau</span></div>
+    </div>
+    <p class="header-prenom">Grace-Emmanuelle Amissa</p>
+  </div>
+  <div class="scroll-cue">
+    <span>Explorer</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ I. FAMILLE D'ORIGINE ══════════════════════════════════════════ -->
+<div class="section-full section-creme">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">I — Racines</p>
+      <h2 class="section-title">Famille d'Origine</h2>
+    </div>
+    <div class="prose">
+      <p>Tu viens d'un foyer où l'effort était une langue maternelle et la solidité une vertu cardinale. Dans ta famille d'origine, on n'a pas beaucoup parlé des failles — on les a recouvertes de travail, de rigueur, de structure. Le climat émotionnel était souvent tenu à distance, non par manque d'amour, mais parce que l'amour lui-même se transmettait par les actes, les sacrifices concrets, la capacité à tenir quand tout vacille.</p>
+      <p>Les vérités qui t'ont été transmises dans le corps, avant même les mots : tu dois mériter ta place, le repos est suspect, la sensibilité est une faiblesse qu'on ne montre pas. On t'a enseigné que l'existence se justifie par la production — que l'on existe parce que l'on accomplit. Ce que tu n'as pas vu dans ton foyer : la légèreté gratuite, la joie sans raison, l'expression des émotions comme valeur en soi, la rébellion douce.</p>
+      <p>La vérité de Verseau dans ta Lune dit pourtant que tu portais, depuis l'enfance, une vision différente du monde — une intuition que les règles pouvaient être autrement, que le collectif avait un sens plus profond que les structures héritées. Cette vision n'avait peut-être pas sa place dans l'environnement familial. Elle était trop étrange, trop décalée, trop libre pour un foyer construit sur le contrôle et la continuité. Tu l'as donc absorbée en silence, transformée en mission souterraine.</p>
+      <p>L'axiome fondamental de ton enfance : <em>sois capable avant d'être aimé.</em> Et en dessous, plus discret : <em>ta différence est une dette.</em></p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ II. LES 3 NIVEAUX ══════════════════════════════════════════ -->
+<div class="section-full" style="background: var(--blanc);">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">II — Structure</p>
+      <h2 class="section-title">Les 3 Niveaux de l'Être</h2>
+    </div>
+  </div>
+  <div class="niveau-grid">
+    <div class="niveau-card soul">
+      <span class="card-icon">☉</span>
+      <p class="card-tag">Soleil — Capricorne · L'Idéal</p>
+      <h3>Ce que l'âme vise</h3>
+      <div class="card-body">
+        <p>Tu vises l'autorité par l'intégrité — non pas le pouvoir pour le pouvoir, mais la maîtrise qui construit quelque chose de durable. Ton idéal solaire est la figure qui bâtit en silence, qui laisse une empreinte réelle dans le monde matériel, qui transforme la vision en forme concrète.</p>
+        <p class="card-sub-label">Le piège</p>
+        <p>Tu peux confondre le viseur avec l'acquis — croire que le contrôle, l'ascèse, la productivité permanente t'amèneront à toi-même. Mais le Soleil ne se possède pas. Il se vise toujours. Le piège capricornien : croire que la montagne escaladée prouve la valeur. Elle ne prouve rien — elle libère.</p>
+      </div>
+    </div>
+    <div class="niveau-card incarnation">
+      <span class="card-icon">↑</span>
+      <p class="card-tag">Ascendant — Capricorne · La Forme</p>
+      <h3>Comment tu t'es incarnée</h3>
+      <div class="card-body">
+        <p>Ton vêtement de vie est double Capricorne. Tu t'es incarnée dans le sérieux, dans la structure, dans l'apparence de maîtrise absolue. Les gens te perçoivent d'emblée comme quelqu'un qui "sait ce qu'elle fait" — fiable, solide, imposante dans sa discrétion.</p>
+        <p class="card-sub-label">La prison</p>
+        <p>Ce que l'Ascendant Capricorne opère automatiquement : la rigidification défensive. Tu te fais structure pour ne pas te faire toucher. La prison : être tellement perçue comme forte que personne ne t'offre de soutien — et que tu n'oses plus en demander.</p>
+      </div>
+    </div>
+    <div class="niveau-card mission">
+      <span class="card-icon">☽</span>
+      <p class="card-tag">Lune — Verseau · La Matière</p>
+      <h3>Mémoire, blessure & transmutation</h3>
+      <div class="card-body">
+        <p>Ta Lune Verseau porte la mémoire de ceux qui ne rentraient pas dans le moule — les marginaux, les visionnaires, les exclus du système. Il y a dans ta lignée des êtres qui ont payé le prix de leur singularité.</p>
+        <p class="card-sub-label">La blessure</p>
+        <p>Avoir été trop différente pour appartenir — dans la famille, dans le groupe, dans les structures sociales. Ce qui a été confisqué : ta liberté d'être étrange, ton droit à l'idée en avance sur son temps.</p>
+        <p class="card-sub-label">Mission de transmutation</p>
+        <p>Réconcilier la structure capricornienne avec la vision verseau. Construire des formes qui libèrent plutôt que d'emprisonner. Incarner que la rigueur peut servir le futur, et non le reproduire.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ III. TALENTS ══════════════════════════════════════════ -->
+<div class="section-full section-creme">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">III — Dons</p>
+      <h2 class="section-title">Talents Naturels</h2>
+    </div>
+  </div>
+  <div class="section" style="padding-top: 0;">
+    <div class="talents-grid">
+      <div class="talent-block">
+        <span class="talent-icon">🏛</span>
+        <p class="talent-name">L'Architecture de l'Invisible</p>
+        <p class="talent-body">Tu as la capacité rare de transformer une vision abstraite en structure opérationnelle. Là où d'autres voient une idée, tu vois déjà les fondations, les étapes, les points de résistance. Ce n'est pas de la méthode — c'est une perception directe de la forme que quelque chose doit prendre pour tenir dans la durée.</p>
+      </div>
+      <div class="talent-block">
+        <span class="talent-icon">🔭</span>
+        <p class="talent-name">La Vision Décalée</p>
+        <p class="talent-body">Ta Lune Verseau te donne accès à des fréquences d'information que tu n'expliques pas rationnellement — des intuitions sur ce qui va émerger, des lectures de système qui dépassent le présent. Tu perçois les patterns avant qu'ils soient visibles. Ton danger : ne pas te faire confiance parce que tu ne sais pas d'où ça vient.</p>
+      </div>
+      <div class="talent-block">
+        <span class="talent-icon">⚖</span>
+        <p class="talent-name">La Maîtrise du Temps Long</p>
+        <p class="talent-body">Là où la plupart s'essoufflent, tu t'inscris dans la durée avec une aisance qui déroute. Le Capricorne double te donne une endurance stratégique — tu construis patiemment, tu n'abandonnes pas aux premiers obstacles, tu comprends instinctivement que ce qui tient a été fait lentement.</p>
+      </div>
+      <div class="talent-block">
+        <span class="talent-icon">🧲</span>
+        <p class="talent-name">L'Autorité Silencieuse</p>
+        <p class="talent-body">Tu n'as pas besoin de parler fort pour être entendue. Ta présence elle-même structure l'espace. Les gens s'organisent autour de toi sans que tu l'aies demandé — ton sérieux, ta précision, ton absence de bavardage inutile créent une forme de gravité naturelle qui attire et oriente.</p>
+      </div>
+      <div class="talent-block">
+        <span class="talent-icon">🔗</span>
+        <p class="talent-name">Le Pont entre Mondes</p>
+        <p class="talent-body">La tension Capricorne–Verseau fait de toi une traductrice naturelle entre le monde de la structure et le monde de la vision. Tu peux parler aux institutions comme aux révolutionnaires. Tu comprends les deux langages. Ce talent de médiation est particulièrement puissant dans les environnements en transformation.</p>
+      </div>
+      <div class="talent-block">
+        <span class="talent-icon">🔬</span>
+        <p class="talent-name">Le Diagnostic Émotionnel Froid</p>
+        <p class="talent-body">Ta capacité à ne pas être emportée par l'émotion immédiate te permet de voir ce qui se passe vraiment dans une situation humaine. Tu lis les systèmes relationnels avec une lucidité clinique qui peut sembler froide mais qui est en réalité d'une précision chirurgicale — une forme d'intelligence émotionnelle distanciée.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ IV. CROYANCES RACINES ══════════════════════════════════════════ -->
+<div class="section-full section-dark">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num" style="color: var(--or);">IV — Matrice</p>
+      <h2 class="section-title section-title-light">Croyances Racines</h2>
+    </div>
+  </div>
+  <div class="section" style="padding-top: 0;">
+    <div class="croyances-grid">
+      <div class="croyance-block">
+        <p class="croyance-domaine">Légitimité</p>
+        <p class="axiome">Je n'ai le droit d'exister pleinement que si j'ai prouvé ma valeur.</p>
+        <p class="axiome">Ma singularité est un fardeau, pas un avantage.</p>
+      </div>
+      <div class="croyance-block">
+        <p class="croyance-domaine">Amour</p>
+        <p class="axiome">Pour être aimée, je dois être forte — jamais dans le besoin.</p>
+        <p class="axiome">Si je montre ma vulnérabilité, on me quittera ou on me décevra.</p>
+      </div>
+      <div class="croyance-block">
+        <p class="croyance-domaine">Argent</p>
+        <p class="axiome">L'argent se mérite par l'effort — jamais par le simple fait d'exister.</p>
+        <p class="axiome">Vouloir trop, trop vite, est indécent ou dangereux.</p>
+      </div>
+      <div class="croyance-block">
+        <p class="croyance-domaine">Pouvoir</p>
+        <p class="axiome">Le pouvoir corrompt — je dois donc le garder à distance.</p>
+        <p class="axiome">Ma vision est trop radicale pour être acceptée telle quelle.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ V. SCHÉMAS RÉPÉTITIFS ══════════════════════════════════════════ -->
+<div class="section-full" style="background: var(--blanc);">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">V — Boucles</p>
+      <h2 class="section-title">Schémas Répétitifs</h2>
+    </div>
+  </div>
+  <div class="section" style="padding-top: 0;">
+    <div class="schemas-list">
+      <div class="schema-card">
+        <div class="schema-num">01</div>
+        <div>
+          <p class="schema-title">La Forteresse Performante</p>
+          <p class="schema-body">Tu construis un haut niveau de compétence et d'autonomie — puis tu t'étonnes que les autres ne t'offrent pas de soutien. La mécanique : plus tu prouves que tu n'as besoin de rien, plus tu te coupes de la possibilité d'être reçue. Tu crées les conditions exactes de ta solitude tout en la déplorant.</p>
+          <p class="trigger-label">Déclencheur inconscient</p>
+          <p class="trigger-text">Quand quelqu'un me voit fragile, j'accélère ma performance pour effacer la perception.</p>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-num">02</div>
+        <div>
+          <p class="schema-title">Le Retrait Préventif</p>
+          <p class="schema-body">Avant d'être déçue, tu pars la première — ou tu t'absentes émotionnellement tout en restant physiquement présente. Ce schéma protège d'une blessure ancienne : avoir été incomprise dans ta différence. Mais il t'empêche aussi d'expérimenter la connexion profonde.</p>
+          <p class="trigger-label">Déclencheur inconscient</p>
+          <p class="trigger-text">Dès que je sens qu'on ne comprend pas ma vision, je me referme et je gère seule.</p>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-num">03</div>
+        <div>
+          <p class="schema-title">La Vision Sans Voix</p>
+          <p class="schema-body">Tu perçois avec une clarté étonnante ce qui doit être fait, ce qui ne fonctionne pas, ce qui pourrait être autrement — et tu le gardes pour toi. La mécanique : la peur que ta vision soit trop radicale, trop incomprise, trop en avance te fait taire avant même que tu testes la réception.</p>
+          <p class="trigger-label">Déclencheur inconscient</p>
+          <p class="trigger-text">Si mon idée est jugée bizarre ou irréaliste, c'est toute ma valeur qui est niée.</p>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-num">04</div>
+        <div>
+          <p class="schema-title">L'Ascèse Compensatoire</p>
+          <p class="schema-body">Quand quelque chose ne va pas en toi — doute, peur, douleur — tu travailles davantage, tu te disciplines plus, tu t'imposes plus de rigueur. La structure devient anesthésiante. Ce schéma fonctionne à court terme et retarde l'intégration émotionnelle à long terme.</p>
+          <p class="trigger-label">Déclencheur inconscient</p>
+          <p class="trigger-text">Si je reste immobile, je vais ressentir quelque chose que je ne sais pas gérer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ VI. TENSIONS MÉCANIQUES ══════════════════════════════════════════ -->
+<div class="section-full" style="background: var(--nuit-deep);">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num" style="color: var(--or);">VI — Frictions</p>
+      <h2 class="section-title section-title-light">Tensions Mécaniques</h2>
+    </div>
+  </div>
+  <div class="tensions-list" style="max-width: 1100px; margin: 0 auto;">
+    <div class="tension-card">
+      <p class="tension-versus">Soleil + Ascendant vs Lune ·&nbsp; Terre vs Air</p>
+      <p class="tension-title">La Structure contre la Vision</p>
+      <p class="tension-body">Ton double Capricorne veut construire du réel, du tangible, du mesurable. Ta Lune Verseau veut transgresser, expérimenter, imaginer ce qui n'existe pas encore. Ces deux forces tirent dans des directions opposées : l'une ancre, l'autre s'envole. La tension concrète se vit ainsi : tu conçois des visions radicales puis tu les rationalises jusqu'à les rendre méconnaissables, "acceptables", banales. Le moteur de croissance ici : apprendre à prototyper la vision avant de la rationaliser — lui laisser un espace d'existence brute avant la structure.</p>
+    </div>
+    <div class="tension-card">
+      <p class="tension-versus">Capricorne Soleil vs Capricorne Ascendant ·&nbsp; Double saturnien</p>
+      <p class="tension-title">L'Idéal noyé dans la Forme</p>
+      <p class="tension-body">Lorsque le Soleil et l'Ascendant partagent le même signe, il existe un risque d'identification totale au masque — tu te confonds avec ta fonction. Ce que tu vises (Soleil Capricorne : la maîtrise juste, la construction durable) devient difficile à distinguer de ce que tu projettes automatiquement (Ascendant Capricorne : la maîtrise de façade). La tension : tu peux passer des années à performer ce que tu devrais simplement être. Le moteur : introduire du jeu, de l'imperfection volontaire, pour distinguer l'être de l'apparaître.</p>
+    </div>
+    <div class="tension-card">
+      <p class="tension-versus">Lune Verseau vs Corps Capricorne ·&nbsp; Détachement vs Incarnation</p>
+      <p class="tension-title">L'Âme en Exil dans son Propre Corps</p>
+      <p class="tension-body">La Lune Verseau crée un rapport naturellement détaché aux émotions et aux besoins corporels — tu "observes" tes états plus que tu ne les habites. Le double Capricorne renforce ce désinvestissement somatique : le corps est un outil, pas un lieu. Cette tension produit une dissociation subtile — tu peux fonctionner à très haut niveau tout en étant fondamentalement déconnectée de tes sensations, de tes désirs, de ta faim. Le moteur : l'incarnation corporelle consciente comme acte révolutionnaire.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ VII. ALIGNEMENT ══════════════════════════════════════════ -->
+<div class="section-full section-pale">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">VII — Boussole</p>
+      <h2 class="section-title">Alignement & Désalignement</h2>
+    </div>
+    <div style="overflow-x: auto;">
+      <table class="align-table">
+        <thead>
+          <tr>
+            <th>Domaine</th>
+            <th>✦ Quand tu es alignée</th>
+            <th>✗ Quand tu es désalignée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="align-label">Âme</span></td>
+            <td class="align-oui">Tu construis quelque chose qui n'existera que par toi. Tu sens que ton travail est une offrande à plus grand que l'ego.</td>
+            <td class="align-non">Tu travailles pour prouver, pour te justifier, pour ne pas ressentir le vide. L'effort devient une addiction.</td>
+          </tr>
+          <tr>
+            <td><span class="align-label">Incarnation</span></td>
+            <td class="align-oui">Tu existes dans ton corps, tu prends de l'espace physiquement et verbalement, tu te laisses être vue dans ta complexité.</td>
+            <td class="align-non">Tu te fais invisible sous une performance de compétence. Tu parles peu de toi et beaucoup de tes résultats.</td>
+          </tr>
+          <tr>
+            <td><span class="align-label">Mission</span></td>
+            <td class="align-oui">Tu transmets ta vision à ceux qui peuvent la recevoir, tu construis des ponts entre le passé et le futur, tu libères par la structure.</td>
+            <td class="align-non">Tu gardes ta vision pour toi par peur du rejet, tu te conformes pour appartenir, tu rétrécis ton intelligence pour être aimée.</td>
+          </tr>
+          <tr>
+            <td><span class="align-label">Financier</span></td>
+            <td class="align-oui">Tu reçois en proportion de ta valeur réelle, tu délègues ce qui ne te nourrit pas, tu te paies en premier.</td>
+            <td class="align-non">Tu sous-factures pour ne pas paraître "trop", tu surlivres pour justifier ton existence, l'argent te fait peur autant qu'il t'attire.</td>
+          </tr>
+          <tr>
+            <td><span class="align-label">Amour</span></td>
+            <td class="align-oui">Tu laisses entrer quelqu'un dans la forteresse — pas pour qu'il la remplace, mais pour qu'il la connaisse de l'intérieur.</td>
+            <td class="align-non">Tu choisis des partenaires qui confirment ton indépendance nécessaire, ou qui te forcent à tout gérer seule.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ VIII. MÉTIER & BUSINESS ══════════════════════════════════════════ -->
+<div class="section-full" style="background: var(--blanc);">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">VIII — Expression Matérielle</p>
+      <h2 class="section-title">Métier, Business & Investissement</h2>
+    </div>
+    <div class="business-grid">
+      <div class="domaine-card pro">
+        <p class="domaine-tag">Terrain professionnel</p>
+        <h3>Terrains Naturels</h3>
+        <div class="domaine-body">
+          <p>Tu excelles dans tout ce qui requiert à la fois une vision systémique et une capacité d'exécution rigoureuse : architecture organisationnelle, stratégie long terme, conseil en transformation, développement de structures durables. Les environnements en mutation qui ont besoin d'un ancrage te reconnaissent instinctivement.</p>
+          <p style="margin-top: 1rem;"><strong style="font-family: 'Jost'; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-pale);">Ce qui détruit</strong><br>Les environnements de performance superficielle, les rôles purement exécutifs sans vision, le travail en urgence permanente qui court-circuite le temps long, les structures trop rigides qui punissent l'innovation.</p>
+          <p style="margin-top: 1rem;"><strong style="font-family: 'Jost'; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-pale);">Leviers business</strong><br>Positionne ta singularité Verseau comme différenciateur — tu ne vends pas de la compétence ordinaire, tu vends un regard. Capitalise sur la durée : tes meilleures offres sont celles qui s'inscrivent dans du temps long avec les mêmes clients. Ton blocage financier : tu attends d'avoir "tout fini" pour te payer. Inverse la logique.</p>
+        </div>
+      </div>
+      <div class="domaine-card invest">
+        <p class="domaine-tag">Investissement</p>
+        <h3>Profil & Leviers</h3>
+        <div class="domaine-body">
+          <p>Tu es naturellement attirée par les investissements tangibles à long terme : immobilier de niche, actifs réels, structures pérennes. Ta Lune Verseau t'attire aussi vers les technologies d'avenir, les secteurs de disruption — mais ta nature double Capricorne te protège des paris trop spéculatifs si tu écoutes ta propre sagesse.</p>
+          <p style="margin-top: 1rem;"><strong style="font-family: 'Jost'; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-pale);">Blocage financier central</strong><br>La croyance que l'abondance doit être méritée par l'effort empêche de recevoir passivement. Travailler le droit de générer sans travailler davantage — l'argent qui vient pendant que tu dors est aussi légitime que celui qui vient de 14 heures de travail.</p>
+          <p style="margin-top: 1rem;"><strong style="font-family: 'Jost'; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-pale);">Levier invisible</strong><br>Tu as une intelligence des systèmes qui, appliquée à ta propre finance, peut créer une architecture patrimoniale solide en relativement peu de temps. Ce que tu fais pour les autres, fais-le d'abord pour toi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ IX. COMPATIBILITÉS ══════════════════════════════════════════ -->
+<div class="section-full section-pale">
+  <div class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="section-header">
+      <p class="section-num">IX — Résonances</p>
+      <h2 class="section-title">Compatibilités Énergétiques</h2>
+    </div>
+    <div class="compat-grid">
+      <div class="compat-card">
+        <p class="compat-context">♡ Amour</p>
+        <div class="compat-signs">
+          <span class="sign-pill compatible">✦ Taureau</span>
+          <span class="sign-pill compatible">✦ Vierge</span>
+          <span class="sign-pill compatible">✦ Scorpion</span>
+          <span class="sign-pill compatible">✦ Poissons</span>
+          <span class="sign-pill risque">⚡ Bélier</span>
+          <span class="sign-pill risque">⚡ Balance</span>
+        </div>
+        <p class="compat-body">En amour, tu as besoin d'un partenaire qui respecte ton autonomie profonde sans l'interpréter comme un rejet. Le Taureau et la Vierge offrent une sécurité matérielle et émotionnelle qui ne menace pas ta liberté intérieure. Le Scorpion peut comprendre ta profondeur sans la craindre. Le Poissons apporte ce que tu refuses de t'accorder : la tendresse gratuite.</p>
+        <p class="compat-warning">⟡ La compatibilité est une résonance, non un destin. C'est toujours le contrat d'âme originel qui prime.</p>
+      </div>
+      <div class="compat-card">
+        <p class="compat-context">◎ Amitié</p>
+        <div class="compat-signs">
+          <span class="sign-pill compatible">✦ Verseau</span>
+          <span class="sign-pill compatible">✦ Gémeaux</span>
+          <span class="sign-pill compatible">✦ Sagittaire</span>
+          <span class="sign-pill risque">⚡ Cancer</span>
+          <span class="sign-pill risque">⚡ Lion</span>
+        </div>
+        <p class="compat-body">Tes amitiés les plus nourrissantes sont avec ceux qui stimulent ton intellect et ta vision sans exiger de toi une présence émotionnelle constante. Le Verseau te comprend dans ta différence. Le Gémeaux te sort de ta rigueur. Le Sagittaire élargit ton horizon quand tu te refermes. Le Cancer et le Lion peuvent te demander plus d'effusion que tu ne peux en donner.</p>
+        <p class="compat-warning">⟡ La compatibilité est une résonance, non un destin. C'est toujours le contrat d'âme originel qui prime.</p>
+      </div>
+      <div class="compat-card">
+        <p class="compat-context">⬡ Business</p>
+        <div class="compat-signs">
+          <span class="sign-pill compatible">✦ Capricorne</span>
+          <span class="sign-pill compatible">✦ Scorpion</span>
+          <span class="sign-pill compatible">✦ Verseau</span>
+          <span class="sign-pill compatible">✦ Vierge</span>
+          <span class="sign-pill risque">⚡ Gémeaux</span>
+          <span class="sign-pill risque">⚡ Sagittaire</span>
+        </div>
+        <p class="compat-body">En business, tu as besoin de partenaires qui honorent l'engagement et la durée. Le Scorpion partage ton intensité stratégique. Un autre Capricorne comprend le sens du temps long. Le Verseau peut être un allié visionnaire — s'il est ancré. Méfie-toi des profils qui commencent fort et s'essoufflent : ça mine ta confiance et ton élan.</p>
+        <p class="compat-warning">⟡ La compatibilité est une résonance, non un destin. C'est toujours le contrat d'âme originel qui prime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════ X. ARCHÉTYPE ALIGNÉ ══════════════════════════════════════════ -->
+<div class="archetype-section">
+  <div class="archetype-inner">
+    <p class="eyebrow" style="color: var(--or); letter-spacing: 0.3em; margin-bottom: 1.5rem;">X — Le Moi Supérieur</p>
+    <p style="font-family: 'Cormorant Garamond'; font-size: 1rem; font-style: italic; color: rgba(253,252,250,0.5); margin-bottom: 1.5rem;">Ton nom propre d'archétype</p>
+    <h2 class="archetype-name"><em>L'Architecte de l'Aube</em></h2>
+    <p class="archetype-desc">Celle qui bâtit dans l'obscurité ce que le monde verra au matin. Elle ne construit pas pour être vue construire — elle construit parce que quelque chose en elle sait exactement quelle forme le futur doit prendre. Elle est la rencontre entre le réel et l'impossible, entre la discipline et la vision, entre la montagne et l'étoile.</p>
+    <div class="aligned-signs">
+      <div class="aligned-sign-block">
+        <p class="aligned-sign-name">☉ Soleil transmué</p>
+        <p class="aligned-sign-desc">La maîtrise qui libère plutôt qu'elle n'emprisonne</p>
+      </div>
+      <div class="aligned-sign-block">
+        <p class="aligned-sign-name">↑ Ascendant transmué</p>
+        <p class="aligned-sign-desc">La présence qui structure sans se rigidifier</p>
+      </div>
+      <div class="aligned-sign-block">
+        <p class="aligned-sign-name">☽ Lune transmuée</p>
+        <p class="aligned-sign-desc">La vision portée dans le corps, pas seulement dans la tête</p>
+      </div>
+    </div>
+    <p class="eyebrow" style="color: var(--or); margin-bottom: 1.5rem;">Marqueurs concrets de l'archétype activé</p>
+    <div class="markers-list">
+      <p class="marker-item">Tu partages ta vision avant qu'elle soit parfaite, sans te justifier</p>
+      <p class="marker-item">Tu reçois de l'aide sans le vivre comme une dette ou une faiblesse</p>
+      <p class="marker-item">Tu construis des structures qui libèrent les autres, pas seulement toi</p>
+      <p class="marker-item">Tu te paies selon ta valeur réelle, sans négocier contre toi-même</p>
+      <p class="marker-item">Tu habites ton corps comme un allié, pas comme un outil</p>
+      <p class="marker-item">Tu permets à quelqu'un de te connaître derrière la forteresse</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ XI. DÉCRETS ══════════════════════════════════════════ -->
+<div class="decrets-section">
+  <div class="decrets-inner">
+    <p class="eyebrow" style="color: var(--or); letter-spacing: 0.3em; margin-bottom: 3rem; text-align: center;">XI — Activation Verbale</p>
+
+    <!-- Phase 1 -->
+    <p class="phase-label">Phase 1</p>
+    <h3 class="phase-title">Dissolution des Mémoires</h3>
+    <p class="phase-intro">Pose les deux pieds au sol. Pose une main sur le sternum. Respire lentement avant chaque décret. Laisse les mots descendre dans le corps — pas seulement dans le mental.</p>
+
+    <div class="decret-item" data-num="01">Je libère la croyance que ma valeur dépend de ce que je produis.</div>
+    <div class="decret-item" data-num="02">Je dissous le contrat familial qui disait que ma différence était un problème.</div>
+    <div class="decret-item" data-num="03">Je relâche la mémoire de toutes celles qui ont dû se taire pour appartenir.</div>
+    <div class="decret-item" data-num="04">Je libère la peur d'être vue dans ma fragilité et d'être abandonnée pour ça.</div>
+    <div class="decret-item" data-num="05">Je dissolve la croyance que l'argent se mérite uniquement par l'effort.</div>
+    <div class="decret-item" data-num="06">Je relâche la rigidité comme seule forme de sécurité que je connaisse.</div>
+    <div class="decret-item" data-num="07">Je libère la conviction que ma vision est trop grande pour être reçue.</div>
+
+    <div class="phase-divider"></div>
+
+    <!-- Phase 2 -->
+    <p class="phase-label">Phase 2</p>
+    <h3 class="phase-title">Activation — L'Architecte de l'Aube</h3>
+    <p class="phase-intro">Redresse la colonne. Lève légèrement le menton. Parle à voix haute si possible — que les mots résonnent dans l'espace.</p>
+
+    <div class="decret-item activation" data-num="01">Je suis L'Architecte de l'Aube — celle qui construit ce que le monde n'a pas encore vu.</div>
+    <div class="decret-item activation" data-num="02">Je reçois l'abondance en proportion de ma valeur réelle, ici et maintenant.</div>
+    <div class="decret-item activation" data-num="03">Ma vision est un service au monde — je la partage avec clarté et sans permission.</div>
+    <div class="decret-item activation" data-num="04">Je laisse entrer l'amour dans la forteresse — sans perdre une seule pierre de ce que j'ai bâti.</div>
+    <div class="decret-item activation" data-num="05">Mon corps est le premier territoire que je construis et que j'habite pleinement.</div>
+    <div class="decret-item activation" data-num="06">Je construis lentement et juste — et ce que je bâtis dure.</div>
+    <div class="decret-item activation" data-num="07">Ma singularité est ma précision — elle guide ceux qui ont besoin de ma fréquence.</div>
+    <div class="decret-item activation" data-num="08">Je suis la réconciliation vivante entre la structure et la liberté — je suis L'Architecte de l'Aube.</div>
+
+    <div class="decret-seal">
+      <p class="seal-text">Il est scellé.<br>Grace-Emmanuelle Amissa — L'Architecte de l'Aube.<br>Ce qui vient est à la hauteur de ce que tu as traversé.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ PHRASE DE VIE ══════════════════════════════════════════ -->
+<div class="phrase-section">
+  <p class="phrase-citation">
+    "Tu n'as pas survécu à la structure pour rester dans ses murs —<br>
+    tu as survécu pour bâtir des maisons où les âmes libres peuvent enfin respirer."
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════ FOOTER ══════════════════════════════════════════ -->
+<footer class="footer">
+  <p class="footer-logo">Archétype d'Incarnation</p>
+  <p class="footer-sub">by Princesse Tchassi</p>
+</footer>
+
+</body>
+</html>
